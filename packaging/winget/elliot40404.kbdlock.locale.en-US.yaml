@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
+PackageIdentifier: elliot40404.kbdlock
+PackageVersion: 0.0.0
+PackageLocale: en-US
+Publisher: elliot40404
+PackageName: kbdlock
+License: MIT
+ShortDescription: Windows utility that globally blocks keyboard input with multiple fail-safe unlock mechanisms
+PackageUrl: https://github.com/elliot40404/kbdlock
+ManifestType: defaultLocale
+ManifestVersion: 1.6.0

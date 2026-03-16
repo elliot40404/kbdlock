@@ -1,0 +1,40 @@
+# .goreleaser.yaml
+# Documentation: https://goreleaser.com
+# Version: 2
+version: 2
+
+before:
+  hooks:
+    - bash -c 'mkdir -p build && g++ -O2 -Wall -Wextra -mwindows -static -D_WIN32_WINNT=0x0600 sentinel/main.cpp sentinel/hook.cpp sentinel/pipe.cpp -o build/kbdlock-hook.exe -luser32 && cp build/kbdlock-hook.exe assets/kbdlock-hook.exe'
+
+builds:
+  - id: kbdlock
+    main: .
+    binary: kbdlock
+    goos:
+      - windows
+    goarch:
+      - amd64
+    ldflags:
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+
+archives:
+  - id: kbdlock
+    formats: ["zip"]
+    files:
+      - none* # only the binary, no extra files
+
+checksum:
+  name_template: "checksums.txt"
+
+release:
+  github:
+    owner: elliot40404
+    name: kbdlock
+  draft: false
+  prerelease: auto
+
+changelog:
+  use: github-native

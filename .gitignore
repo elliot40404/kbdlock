@@ -1,0 +1,5 @@
+build/
+*.exe
+*.stackdump
+*.log
+*.log.old

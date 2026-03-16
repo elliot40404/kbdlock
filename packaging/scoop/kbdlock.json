@@ -1,0 +1,21 @@
+{
+  "version": "0.0.0",
+  "description": "Windows utility that globally blocks keyboard input with multiple fail-safe unlock mechanisms",
+  "homepage": "https://github.com/elliot40404/kbdlock",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/elliot40404/kbdlock/releases/download/v0.0.0/kbdlock.exe",
+      "hash": "TODO"
+    }
+  },
+  "bin": "kbdlock.exe",
+  "checkver": "github",
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/elliot40404/kbdlock/releases/download/v$version/kbdlock.exe"
+      }
+    }
+  }
+}
